@@ -3,7 +3,7 @@ import {Map,Set, OrderedMap,List} from 'immutable'
 
 const defaultState = Map({
     isFetching:false,
-    todolist:List(),
+    todolist:List()
 });
 
 const todolistWillGet=(state, action) => {
@@ -30,6 +30,7 @@ const todolistDidAdd=(state, action) => {
 }
 
 const todolistDidDelete=(state, action) => {
+
     if(action.isSuccess && typeof action.callback === 'function'){
         action.callback();
     }
