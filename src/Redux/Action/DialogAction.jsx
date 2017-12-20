@@ -1,13 +1,13 @@
 export const openDialog =(name)=> {
     return {
-        type: "OPEN_DIALOG",
+        type: "DIALOG_WILL_OPEN",
         name: name
     }
 }
 
 export const closeDialog =(name)=> {
     return {
-        type: "CLOSE_DIALOG",
+        type: "DIALOG_WILL_CLOSE",
         name: name
     }
 }

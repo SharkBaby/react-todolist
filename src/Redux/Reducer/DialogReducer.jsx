@@ -5,16 +5,14 @@ const defaultState = Map(
 );
 
 const openDialog = (state, action)=>{
-    state = state.set(action.name, true);
-    return state
+    return state.set(action.name, true);
 }
 
 const closeDialog = (state, action)=>{
-    state = state.set(action.name,false)
-    return state
+    return state.set(action.name,false);
 }
 
 export const dialogReducer = createReducer(defaultState, {
-    'OPEN_DIALOG':openDialog,
-    'CLOSE_DIALOG':closeDialog,
+    'DIALOG_WILL_OPEN':openDialog,
+    'DIALOG_WILL_CLOSE':closeDialog,
 });

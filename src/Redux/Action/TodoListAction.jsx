@@ -4,13 +4,13 @@ import {HOST} from '../../Util/Constants'
 
 const url=`${HOST}/todolist`;
 
-export const SelectTodolistItem=(todolistItem)=>{
+export const selectTodolistItem=(todolistItem)=>{
     return {
         type: "TODOLISTITEM_DID_SELECT",
         todolistItem: todolistItem,
     }
 }
-export const GetTodolist = ()=> {
+export const getTodolist = ()=> {
     return async(dispatch) => {
         let httpUtil = new HttpUtil();
         dispatch({
@@ -24,7 +24,7 @@ export const GetTodolist = ()=> {
     }
 }
 
-export const AddTodolist = (data) =>  {
+export const addTodolist = (data) =>  {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
         await httpUtil.HttpPostAsync(url,data);
@@ -34,7 +34,7 @@ export const AddTodolist = (data) =>  {
     }
 }
 
-export const DeleteTodolist = (id)=> {
+export const deleteTodolist = (id)=> {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
         await httpUtil.HttpDeleteAsync(`${url}/${id}`,null);
@@ -44,7 +44,7 @@ export const DeleteTodolist = (id)=> {
     }
 }
 
-export const UpdateTodolist = (id, data) => {
+export const updateTodolist = (id, data) => {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
         await httpUtil.HttpPutAsync(`${url}/${id}`,data);

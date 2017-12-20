@@ -29,8 +29,7 @@ const todolistDidUpdate=(state, action) => {
 }
 
 const todolistDidSelect = (state,action)=>{
-    state = state.set('todolistItem', Map(action.todolistItem));
-    return state;
+    return state.set('todolistItem', Map(action.todolistItem));
 }
 
 export const todolistReducer = createReducer(defaultState, {
