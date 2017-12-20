@@ -1,0 +1,51 @@
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, cite,del, dfn, em, font, q, s, samp,strike, strong,ol, ul, li, dd, dl,fieldset, form, label, legend,tbody, tfoot, thead, tr{
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+    vertical-align: baseline;
+}
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	font:14px/1.5 Segoe UI,Semilight,"\5FAE\8F6F\96C5\9ED1",helvetica;
+	color:#333;
+    background: #fff;
+}
+
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	border: 0;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #AAA; 
+    height: 0px;
+    box-sizing: content-box;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	outline: 0 none;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}

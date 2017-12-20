@@ -52,7 +52,7 @@ class TodolistTable extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table className="common-table">
                     <thead>
                         <tr>
                             <th>id</th>
@@ -66,13 +66,13 @@ class TodolistTable extends Component {
                             this.props.todolist.map((todoitem)=>{
                                 return(  
                                     <tr>
-                                        <td>{todoitem.id}</td>
-                                        <td>{todoitem.text}</td>
+                                        <td className="todolist-id">{todoitem.id}</td>
+                                        <td classname="todolist-text">{todoitem.text}</td>
                                         <td>
-                                            <button onClick={()=>{this.openModal(editTodolistItemDialog,todoitem)}}>Edit</button>
+                                            <button className="modify-button button-pos" onClick={()=>{this.openModal(editTodolistItemDialog,todoitem)}}>Edit</button>
                                         </td>
                                         <td>
-                                            <button onClick={()=>{this.openModal(deleteTodolistItemDialog,todoitem)}} >Delete</button>
+                                            <button className="modify-button-delete" onClick={()=>{this.openModal(deleteTodolistItemDialog,todoitem)}} >Delete</button>
                                         </td>
                                     </tr>
                                     )

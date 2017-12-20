@@ -21,7 +21,7 @@ class TodolistAdd extends Component {
   
     render() {
         return (
-            <div>
+            <div className=''>
                 <textarea ref={ref=>this.newTodoText=ref}/>
                 <button onClick={()=>{this.postNewTodoItem()}} >AddNew</button>
             </div>  

@@ -16,7 +16,7 @@ export const getTodolist = ()=> {
         dispatch({
             type: 'TODOLIST_WILL_GET'
           });
-        let todolist = await httpUtil.HttpGetAsync(url);
+        let todolist = await httpUtil.httpGetAsync(url);
         dispatch({
             type: 'TODOLIST_DID_GET',
             todolist:todolist
@@ -27,7 +27,7 @@ export const getTodolist = ()=> {
 export const addTodolist = (data) =>  {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
-        await httpUtil.HttpPostAsync(url,data);
+        await httpUtil.httpPostAsync(url,data);
         dispatch({
             type: 'TODOLIST_DID_ADD',
           });
@@ -37,7 +37,7 @@ export const addTodolist = (data) =>  {
 export const deleteTodolist = (id)=> {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
-        await httpUtil.HttpDeleteAsync(`${url}/${id}`,null);
+        await httpUtil.httpDeleteAsync(`${url}/${id}`,null);
         dispatch({
             type: 'TODOLIST_DID_DELETE',
         });
@@ -47,7 +47,7 @@ export const deleteTodolist = (id)=> {
 export const updateTodolist = (id, data) => {
     let httpUtil = new HttpUtil();
     return async(dispatch) =>{
-        await httpUtil.HttpPutAsync(`${url}/${id}`,data);
+        await httpUtil.httpPutAsync(`${url}/${id}`,data);
         dispatch({
             type: 'TODOLIST_DID_UPDATE',
           });

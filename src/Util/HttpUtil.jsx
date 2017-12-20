@@ -15,23 +15,23 @@ export default class HttpUtil
         this.headers[headerName] = headerValue;
     }
 
-    HttpGetAsync = async (url)=>{
+    httpGetAsync = async (url)=>{
         return await this._fetch(url,'Get',null);
     }
 
-    HttpPostAsync = async (url,data) =>{
+    httpPostAsync = async (url,data) =>{
         return await this._fetch(url,'Post',data);
     }
 
-    HttpPutAsync = async (url,data) => {
+    httpPutAsync = async (url,data) => {
         return await this._fetch(url,'Put',data);
     }
 
-    HttpDeleteAsync = async (url,data) => {
+    httpDeleteAsync = async (url,data) => {
         return await this._fetch(url,'Delete',data);
     }
 
-    HttpPatchAsync = async (url,data) => {
+    httpPatchAsync = async (url,data) => {
         return await this._fetch(url,'Patch',data);
     }
 

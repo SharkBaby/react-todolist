@@ -1,0 +1,6 @@
+.todolist-id,.todolist-text{
+    min-width: 302px;
+    height: 90px;
+    padding: 12px 30px 12px 8px;
+    word-break:break-all;
+}
