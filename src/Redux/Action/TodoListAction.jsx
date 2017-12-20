@@ -2,6 +2,12 @@ import {fetchData, postData, putData, deleteData} from '../../Util/HttpUtil'
 
 const Path='todolist';
 
+export const SelectTodolistItem=(todolistItem)=>{
+    return {
+        type: "TODOLISTITEM_DID_SELECT",
+        todolistItem: todolistItem,
+    }
+}
 export const GetTodolist = ()=>{
     return fetchData(Path, null, "TODOLIST_WILL_GET", "TODOLIST_DID_GET", null)
 }

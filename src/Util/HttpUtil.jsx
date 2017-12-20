@@ -121,5 +121,5 @@ const buildGetParams = data => {
             callback:callback,
             body:putData
         }
-        return request(url, options);
+        return request(path, options);
     }

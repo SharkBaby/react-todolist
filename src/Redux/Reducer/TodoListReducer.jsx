@@ -3,7 +3,8 @@ import {Map,Set, OrderedMap,List} from 'immutable'
 
 const defaultState = Map({
     isFetching:false,
-    todolist:List()
+    todolist:List(),
+    todolistItem:Map()
 });
 
 const todolistWillGet=(state, action) => {
@@ -44,7 +45,10 @@ const todolistDidUpdate=(state, action) => {
     return state;
 }
 
-
+const todolistDidSelect = (state,action)=>{
+    state = state.set('todolistItem', Map(action.todolistItem));
+    return state;
+}
 
 export const todolistReducer = createReducer(defaultState, {
     "TODOLIST_WILL_GET":todolistWillGet,
@@ -52,4 +56,5 @@ export const todolistReducer = createReducer(defaultState, {
     "TODOLIST_DID_ADD":todolistDidAdd,
     "TODOLIST_DID_DELETE": todolistDidDelete,
     'TODOLIST_DID_UPDATE':todolistDidUpdate,
+    'TODOLISTITEM_DID_SELECT':todolistDidSelect,
 })
