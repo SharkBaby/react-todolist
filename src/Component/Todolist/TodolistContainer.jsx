@@ -35,7 +35,7 @@ class TodolistContainer extends Component {
     constructor(props){
         super(props)
         this.newTodoText = null;
-        this.editedItem = {};
+        this.editedItem = null;
     }
 
     componentDidMount () {
@@ -46,57 +46,47 @@ class TodolistContainer extends Component {
         this.timer && clearTimeout(this.timer);
     }
 
-    deleteTodolist = (id)=>{
-        this.props.DeleteTodolist(id, ()=>{
-            this.timer = setTimeout(
-                ()=>{
-                    this.props.GetTodolist()
-                },50)
-        })
+    deleteTodolist = async (id)=>{
+        await this.props.DeleteTodolist(id);
+        await this.props.GetTodolist();
     }
 
-        openModal=(name,todoitem)=> {
-           this.props.openDialog(name);
-           this.props.SelectTodolistItem(todoitem);
-        }
+    openModal=(name,todoitem)=> {
+        this.props.openDialog(name);
+        this.props.SelectTodolistItem(todoitem);
+    }
 
-      closeModal(name) {
-        this.props.closeDialog(name);
-      }
+    closeModal(name) {
+    this.props.closeDialog(name);
+    }
 
-    postNewTodoItem = ()=>{
+    postNewTodoItem = async ()=>{
         if(!this.newTodoText.value){
-            alert("Please input todo item.")
+            alert("Please input todo item.");
             return;
         }
-
-        this.props.AddTodolist(this.newTodoText.value,()=>{
-            this.timer = setTimeout(
-                ()=>{
-                    this.props.GetTodolist()
-                },50)
-        })
+        await this.props.AddTodolist(this.newTodoText.value);
+        this.newTodoText.value='';
+        await this.props.GetTodolist();
+        
     }
 
-    updateTodolist=()=>{
-        if(!this.editedItem.value)
+    updateTodolist=async ()=>{
+        if(!this.editedItem.value){
             alert('please input new text');
+            return;
+        }
+           
+      
+        await this.props.UpdateTodolist(this.props.todolistItem.get('id'),this.editedItem.value);
+        await this.props.GetTodolist();
         this.props.closeDialog('EditTodolistDialog');
-        this.props.UpdateTodolist(this.props.todolistItem.get('id'),this.editedItem.value,()=>{
-            this.timer = setTimeout(
-                ()=>{
-                    this.props.GetTodolist();
-                },50)
-        })
     }
-    deleteTodolist=()=>{
+
+    deleteTodolist=async ()=>{ 
+        await this.props.DeleteTodolist(this.props.todolistItem.get('id'));
+        await this.props.GetTodolist();
         this.props.closeDialog('DeleteTodolistDialog');
-        this.props.DeleteTodolist(this.props.todolistItem.get('id'),()=>{
-            this.timer = setTimeout(
-                ()=>{
-                    this.props.GetTodolist();
-                },50)
-        })
     }
 
     render() {

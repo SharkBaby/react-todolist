@@ -12,36 +12,19 @@ const todolistWillGet=(state, action) => {
 }
 
 const todolistDidGet=(state, action) => {
-    if(action.isSuccess)
-    {
-        state = state.set("todolist", List(action.content));
-        if(action.isSuccess && typeof action.callback === 'function'){
-            action.callback();
-        }
-        return state;
-    }
+    state = state.set("todolist", List(action.todolist));
     return state.set('isFetching',false);
 }
 
 const todolistDidAdd=(state, action) => {
-    if(action.isSuccess && typeof action.callback === 'function'){
-        action.callback();
-    }
     return state;
 }
 
 const todolistDidDelete=(state, action) => {
-
-    if(action.isSuccess && typeof action.callback === 'function'){
-        action.callback();
-    }
     return state;
 }
 
 const todolistDidUpdate=(state, action) => {
-    if(action.isSuccess && typeof action.callback === 'function'){
-        action.callback();
-    }
     return state;
 }
 

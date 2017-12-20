@@ -14,7 +14,7 @@ const APP_FILE = path.resolve(APP_PATH,'app.jsx');
 
 
 module.exports = {
-    entry:  APP_FILE,
+    entry:  ['babel-polyfill',APP_FILE],
     output: {
       path: BUILD_PATH,
       filename: "bundle.js"

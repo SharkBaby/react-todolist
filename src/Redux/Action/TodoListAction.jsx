@@ -1,6 +1,8 @@
-import {fetchData, postData, putData, deleteData} from '../../Util/HttpUtil'
+import HttpUtil from '../../Util/HttpUtil'
+import {HOST} from '../../Util/Constants'
 
-const Path='todolist';
+
+const url=`${HOST}/todolist`;
 
 export const SelectTodolistItem=(todolistItem)=>{
     return {
@@ -8,18 +10,47 @@ export const SelectTodolistItem=(todolistItem)=>{
         todolistItem: todolistItem,
     }
 }
-export const GetTodolist = ()=>{
-    return fetchData(Path, null, "TODOLIST_WILL_GET", "TODOLIST_DID_GET", null)
+export const GetTodolist = ()=> {
+    return async(dispatch) => {
+        let httpUtil = new HttpUtil();
+        dispatch({
+            type: 'TODOLIST_WILL_GET'
+          });
+        let todolist = await httpUtil.HttpGetAsync(url);
+        dispatch({
+            type: 'TODOLIST_DID_GET',
+            todolist:todolist
+          });
+    }
 }
 
-export const AddTodolist = (params, callback) => {
-    return postData(Path, params, 'TODOLIST_DID_ADD', callback)
+export const AddTodolist = (data) =>  {
+    let httpUtil = new HttpUtil();
+    return async(dispatch) =>{
+        await httpUtil.HttpPostAsync(url,data);
+        dispatch({
+            type: 'TODOLIST_DID_ADD',
+          });
+    }
 }
 
-export const DeleteTodolist = (id, callback)=>{
-    return deleteData(`${Path}/${id}`, null, 'TODOLIST_DID_DELETE',callback)
+export const DeleteTodolist = (id)=> {
+    let httpUtil = new HttpUtil();
+    return async(dispatch) =>{
+        await httpUtil.HttpDeleteAsync(`${url}/${id}`,null);
+        dispatch({
+            type: 'TODOLIST_DID_DELETE',
+        });
+    }
 }
 
-export const UpdateTodolist = (id, params,callback) => {
-    return putData(`${Path}/${id}`, params, 'TODOLIST_DID_UPDATE', callback)
+export const UpdateTodolist = (id, data) => {
+    let httpUtil = new HttpUtil();
+    return async(dispatch) =>{
+        await httpUtil.HttpPutAsync(`${url}/${id}`,data);
+        dispatch({
+            type: 'TODOLIST_DID_UPDATE',
+          });
+    }
+  
 }

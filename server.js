@@ -4,6 +4,8 @@ var path = require('path');
 var jwt = require('jsonwebtoken');
 var request = require('request');
 var cookieParser = require('cookie-parser');
+require("babel-polyfill");
+require("babel-core/register");
 
 const app = express();
 
