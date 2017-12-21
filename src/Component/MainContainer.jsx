@@ -8,6 +8,18 @@ export default class MainContainer extends Component {
     }
 
     render(){
+
+        //////////////////////////////////////////////
+        //                                          //
+        //         | Nav1 | Nav2 | Nav3 |           //
+        //__________________________________________//
+        //                                          //
+        //                                          //
+        //               Content                    //
+        //                                          //
+        //////////////////////////////////////////////
+
+
         return (
             <div>
             <header id="home-header">
