@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ContentRouter from './Routers/ContentRouter'
 import Navigation from './Navigation'
 
-export default class MainContainer extends Component {
+export default class HomeContainer extends Component {
     constructor(props){
         super(props);
     }
@@ -22,12 +22,12 @@ export default class MainContainer extends Component {
 
         return (
             <div>
-            <header id="home-header">
-                <Navigation />
-            </header>
-            <main id="home-content">
-                <ContentRouter />
-            </main>
+                <header className="home-header">
+                    <Navigation />
+                </header>
+                <main className="home-content">
+                    <ContentRouter />
+                </main>
             </div>
         )
     }

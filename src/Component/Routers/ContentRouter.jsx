@@ -6,9 +6,9 @@ import LoginContainer from '../LoginContainer'
 
 const ContentRouter = (props) => (
     <Switch>
-        <Route path="/main/todolist" component={TodolistContainer}/>
-        <Route path="/main/about" component={AboutContainer}/>
-        <Redirect from="/main" to="/main/todolist" />
+        <Route path="/home/todolist" component={TodolistContainer}/>
+        <Route path="/home/about" component={AboutContainer}/>
+        <Redirect from="/home" to="/home/todolist" />
         <Route component={LoginContainer}/>
     </Switch>
 );

@@ -4,18 +4,23 @@ import {NavLink} from 'react-router-dom'
 export default class Navigation extends Component {
     render(){
         return (
-            <ul id="header-menu">
+            <ul className="navigation">
                 <li><NavLink
-                        to={`/main/todolist`}
+                        to={`/home/todolist`}
                         exact
-                        className="menu"
-                        ><span>Todo List</span></NavLink></li>
+                        className = "navlink"
+                    >
+                        <span>Todo List</span>
+                    </NavLink>
+                </li>
                 <li><NavLink
-                        to={`/main/about`}
+                        to={`/home/about`}
                         exact
-                        className="menu"
-                        ><span>About</span></NavLink>
-                        </li>
+                        className = "navlink"
+                    >
+                        <span>About</span>
+                    </NavLink>
+                </li>
             </ul>
         )
     }

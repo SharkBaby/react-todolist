@@ -10,18 +10,19 @@ export const DialogStyle = {
         backgroundColor   : 'rgba(0, 0, 0, 0.5)'
       },
       content : {
-        position                   : 'absolute',
-        top                        : '400px',
-        left                       : '600px',
-        right                      : '600px',
-        bottom                     : '400px',
-        border                     : '1px solid #ccc',
-        background                 : '#fff',
-        overflow                   : 'auto',
-        WebkitOverflowScrolling    : 'touch',
-        borderRadius               : '4px',
-        outline                    : 'none',
-        padding                    : '20px'
+        width             :'auto',
+        height            :'auto',
+        maxHeight         :'90%',
+        padding           :'30px',
+        top               :'50%',
+        left              :'50%',
+        right             :'auto',
+        bottom            :'auto',
+        marginRight       :'-50%',
+        transform         :'translate(-50%, -50%)',
+        boxShadow         :'4px 4px 6px 0px rgba(0,0,0,0.5)',
+        overflow          :'auto',
+        borderRadius      :'2px'
      
       }
   };

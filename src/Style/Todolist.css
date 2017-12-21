@@ -1,0 +1,75 @@
+
+.todolist-table .editbutton{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 60px;
+    background-position: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+.todolist-table .deletebutton{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+    width: 60px;
+    background-image: url("../images/delete.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+.todolist-dialog-button{
+    margin-top: 30px;
+    display: flex;
+    justify-content:center;
+}
+
+.todolist-dialog-button>button{
+    margin-left: 20px;
+    height: 40px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+    padding:0;
+}
+
+.todolist-dialog-textarea{
+    margin-left: 20px;
+}
+
+.todolist-dialog-textarea>span{
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.todolist-dialog-textarea>textarea{
+    width:500px;
+    border:1px solid black;
+}
+
+.todolist-add-new{
+    margin-top: 20px;
+    height:40px;
+}
+.todolist-add-new>textarea{
+    width:500px;
+    border:1px solid black;
+}
+
+.todolist-add-new>button{
+    margin-left: 20px;
+    height: 40px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    padding:0;
+}

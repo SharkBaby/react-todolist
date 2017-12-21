@@ -1,22 +1,19 @@
 .common-table{
     border-collapse:collapse;
-    margin-left:40px;
-    margin-top: 20px;
-    margin-right: 40px;
+    margin:20px,40px,0px,40px;
     padding:0;
+    border:0;
 }
 
-.common-table>tbody>tr>th,
 .common-table>thead>tr>th{
     font: 18px Segoe UI,Semilight;
     color: #333333;
     text-align: left;
     padding:12px 8px;
-    /* border-bottom: 1px solid #ddd; */
 }
 
 .common-table>tbody>tr>td {
     font: 13px Segoe UI,Regular;
     color:#000000;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid rgb(175, 175, 175);
 }
