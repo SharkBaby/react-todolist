@@ -12,8 +12,8 @@ export const DialogStyle = {
       content : {
         position                   : 'absolute',
         top                        : '400px',
-        left                       : '400px',
-        right                      : '400px',
+        left                       : '600px',
+        right                      : '600px',
         bottom                     : '400px',
         border                     : '1px solid #ccc',
         background                 : '#fff',

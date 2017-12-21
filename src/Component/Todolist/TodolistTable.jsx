@@ -69,10 +69,18 @@ class TodolistTable extends Component {
                                         <td className="todolist-id">{todoitem.id}</td>
                                         <td classname="todolist-text">{todoitem.text}</td>
                                         <td>
-                                            <button className="modify-button button-pos" onClick={()=>{this.openModal(editTodolistItemDialog,todoitem)}}>Edit</button>
+                                            <button 
+                                                className="table-button-edit" 
+                                                onClick={()=>{this.openModal(editTodolistItemDialog,todoitem)}}
+                                            >
+                                                Edit
+                                            </button>
                                         </td>
                                         <td>
-                                            <button className="modify-button-delete" onClick={()=>{this.openModal(deleteTodolistItemDialog,todoitem)}} >Delete</button>
+                                            <button 
+                                                className="table-button-delete" 
+                                                onClick={()=>{this.openModal(deleteTodolistItemDialog,todoitem)}} 
+                                            />
                                         </td>
                                     </tr>
                                     )
@@ -85,18 +93,27 @@ class TodolistTable extends Component {
                     isOpen={this.props.dialogMap.get(editTodolistItemDialog)}
                     style={DialogStyle}
                     >
-                    <textarea ref={ref=>this.editedItem=ref} defaultValue={this.props.todolistItem.get('text')}/>
-                    <button onClick={()=>{this.updateTodolist()}}>Submit</button>
-                    <button onClick={()=>{this.closeModal(editTodolistItemDialog)}}>Close</button>
+                    <div>
+                        Please Input new text:
+                        <textarea className="edit-textarea" ref={ref=>this.editedItem=ref} defaultValue={this.props.todolistItem.get('text')}/>'
+                    </div>
+                    <div className="edit-buttons">
+                        <button  onClick={()=>{this.updateTodolist()}}>Submit</button>
+                        <button  onClick={()=>{this.closeModal(editTodolistItemDialog)}}>Close</button>
+                    </div>
                 </Modal>
 
                 <Modal 
                     isOpen={this.props.dialogMap.get(deleteTodolistItemDialog)}
                     style={DialogStyle}
                     >
+                    <div>
                         Do you want to delete:{this.props.todolistItem.get('text')}
-                    <button onClick={()=>{this.deleteTodolist()}}>Submit</button>
-                    <button onClick={()=>{this.closeModal(deleteTodolistItemDialog)}}>Close</button>
+                    </div>
+                    <div className="edit-buttons">
+                        <button onClick={()=>{this.deleteTodolist()}}>Submit</button>
+                        <button onClick={()=>{this.closeModal(deleteTodolistItemDialog)}}>Close</button>
+                    </div>
                 </Modal>
             </div>
         )
@@ -109,8 +126,8 @@ export default connect(
         return {
             todolist:map.get("todolist"),
             isFetching:map.get("isFetching"),
-            dialogMap:dialogMap,
             todolistItem:map.get('todolistItem'),
+            dialogMap:dialogMap,
         };
     },
     {getTodolist,deleteTodolist,updateTodolist,openDialog,closeDialog,selectTodolistItem}
