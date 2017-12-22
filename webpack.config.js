@@ -75,6 +75,9 @@ module.exports = {
                 js:['common.bundle.js', 'client.js']
             }
         }),
+        new webpack.DefinePlugin({
+            __DEV__: false //Mark the develop environment
+        }),
         new webpack.optimize.CommonsChunkPlugin({ name: 'common', filename: 'common.bundle.js' }),
         new ExtractTextPlugin('client.css'),
         new webpack.optimize.OccurrenceOrderPlugin(),

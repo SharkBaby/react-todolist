@@ -1,7 +1,6 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import {todolistReducer} from '../Reducer/TodoListReducer'
 import {dialogReducer} from '../Reducer/DialogReducer'
-
 import thunk from 'redux-thunk'
 
 var store = createStore(

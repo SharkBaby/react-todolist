@@ -9,7 +9,7 @@ const openDialog = (state, action)=>{
 }
 
 const closeDialog = (state, action)=>{
-    return state.set(action.name,false);
+    return state.delete(action.name);
 }
 
 export const dialogReducer = createReducer(defaultState, {
