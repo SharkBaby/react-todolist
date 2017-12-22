@@ -11,11 +11,11 @@ export default class HomeContainer extends Component {
 
         //////////////////////////////////////////////
         //                                          //
-        //         | Nav1 | Nav2 | Nav3 |           //
+        //         | Nav1 | Nav2 | <-- <Navation/>  //
         //__________________________________________//
         //                                          //
         //                                          //
-        //               Content                    //
+        //             Content  <--<ContentRoutet/> //
         //                                          //
         //////////////////////////////////////////////
 
