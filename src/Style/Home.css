@@ -14,7 +14,7 @@
 .home-content {
     position: absolute;
     top: 60px;
-    left: 280px;
+    left:0px;
     bottom: 0px;
     right: 0px;
     overflow: hidden;

@@ -1,3 +1,6 @@
+.todolist-table td{
+    min-width: 50px;
+}
 
 .todolist-table .editbutton{
     border: none;
@@ -9,7 +12,6 @@
     vertical-align: middle;
     cursor: pointer;
 }
-
 
 .todolist-table .deletebutton{
     border: none;
@@ -56,9 +58,13 @@
 }
 
 .todolist-add-new{
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin-top: 20px;
     height:40px;
 }
+
 .todolist-add-new>textarea{
     width:500px;
     border:1px solid black;
@@ -70,6 +76,5 @@
     width: 80px;
     border: none;
     cursor: pointer;
-    vertical-align: middle;
     padding:0;
 }

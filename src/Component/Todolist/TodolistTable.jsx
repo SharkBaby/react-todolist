@@ -55,7 +55,6 @@ class TodolistTable extends Component {
                 <table className="common-table">
                     <thead>
                         <tr>
-                            <th>id</th>
                             <th>todo text</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -66,7 +65,6 @@ class TodolistTable extends Component {
                             this.props.todolist.map((todoitem)=>{
                                 return(  
                                     <tr>
-                                        <td>{todoitem.id}</td>
                                         <td>{todoitem.text}</td>
                                         <td >
                                             <button 
