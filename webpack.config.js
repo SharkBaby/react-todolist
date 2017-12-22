@@ -9,7 +9,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH,'src');
 const BUILD_PATH = path.resolve(ROOT_PATH,'dist');
-const TEMPLATE_FILE = path.resolve(APP_PATH,'index.html');
+const TEMPLATE_FILE = path.resolve(APP_PATH,'Template.html');
 const APP_FILE = path.resolve(APP_PATH,'app.jsx');
 
 
@@ -57,16 +57,23 @@ module.exports = {
     ]
     },
     plugins: [
-        // new webpack.optimize.UglifyJsPlugin({
-        //     output: {
-        //         comments: false,
-        //     },
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false,
+            },
+            compress: {
+                warnings: false
+            }
+        }),
         new HtmlWebpackPlugin({
-            template: TEMPLATE_FILE
+            filename:'index.html',
+            template: TEMPLATE_FILE,
+            hash:true,
+            inject:false,
+            files: {
+                css:['client.css'],
+                js:['common.bundle.js', 'client.js']
+            }
         }),
         new webpack.optimize.CommonsChunkPlugin({ name: 'common', filename: 'common.bundle.js' }),
         new ExtractTextPlugin('client.css'),

@@ -11,19 +11,17 @@
   <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
   <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
   <meta HTTP-EQUIV="expires" CONTENT="0">
-  
-    <link href="/client.css?118622eceeba621dbfc1" rel="stylesheet">
-    
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="/<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
 </head>
 
 <body>
   <div id='root'>
   </div>
-  
-    <script type="text/javascript" src="/common.bundle.js?118622eceeba621dbfc1"></script>
-    
-    <script type="text/javascript" src="/bundle.js?118622eceeba621dbfc1"></script>
-    
+  <% for (var js in htmlWebpackPlugin.files.js) { %>
+    <script type="text/javascript" src="/<%=htmlWebpackPlugin.files.js[js] %>"></script>
+    <% } %>
 </body>
 
 </html>
