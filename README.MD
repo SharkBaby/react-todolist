@@ -8,7 +8,7 @@ react-todolist is a react sample for react learners. This demo shows the basic t
 + react
 + redux
 + webpack
-+ async/task
++ async/await
 + others
     + babel-plugin-transform-class-properties
     + react-thunk
