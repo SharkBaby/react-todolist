@@ -2,6 +2,8 @@
 
 react-todolist is a react sample for react learners. This demo shows the basic technology of building a simple react project.
 
+## Renderings show
+![demo homepage](./samplepicture.png)
 ## Key words
 + react
 + redux
