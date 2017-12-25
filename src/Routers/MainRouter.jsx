@@ -1,6 +1,6 @@
 import React, {Component, PropTypes, createElement} from 'react';
 import {Route, Switch,Redirect} from 'react-router-dom'
-import HomeContainer from '../Component/HomeContainer'
+import HomeContainer from '../Component/Home/HomeContainer'
 import LoginContainer from '../Component/LoginContainer'
 
 const Main = () =>(
