@@ -12,6 +12,7 @@ export const DialogStyle = {
       content : {
         width             :'auto',
         height            :'auto',
+        minWidth          :'500px',
         maxHeight         :'90%',
         padding           :'30px',
         top               :'50%',

@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getTodolist,deleteTodolist,updateTodolist,selectTodolistItem} from '../../Redux/Action/TodoListAction';
 import {openDialog,closeDialog} from '../../Redux/Action/DialogAction';
-import Modal from 'react-modal';
-import {DialogStyle} from '../../Util/Constants'
+import Dialog from '../Common/Dialog'
 
 
 const editTodolistItemDialog = 'editTodolistItemDialog';
@@ -26,10 +25,6 @@ class TodolistTable extends Component {
     openModal=(name,todoitem)=> {
         this.props.openDialog(name);
         this.props.selectTodolistItem(todoitem);
-    }
-
-    closeModal(name) {
-        this.props.closeDialog(name);
     }
 
     updateTodolist=async ()=>{
@@ -87,11 +82,8 @@ class TodolistTable extends Component {
                     </tbody>
                 </table>
                 
-                <Modal 
-                    isOpen={this.props.dialogMap.get(editTodolistItemDialog)}
-                    style={DialogStyle}
-                    >
-                    <div className="todolist-dialog-textarea">
+                <Dialog name={editTodolistItemDialog}>
+                     <div className="todolist-dialog-textarea">
                         <span>Please input new todo text</span>
                         <br/>
                         <textarea 
@@ -99,27 +91,21 @@ class TodolistTable extends Component {
                             defaultValue={this.props.todolistItem.get("text")}
                         />
                     </div>
-                    <div className="todolist-dialog-button">
-                        <button  onClick={()=>{this.updateTodolist()} }>Submit</button>
-                        <button  onClick={()=>{this.closeModal(editTodolistItemDialog)}}>Close</button>
+                    <div className="dialog-confirm">
+                        <button onClick={()=>{this.updateTodolist()} }>Submit</button>
                     </div>
-                </Modal>
+                </Dialog>
 
-                <Modal 
-                    isOpen={this.props.dialogMap.get(deleteTodolistItemDialog)}
-                    style={DialogStyle}
-                   
-                    >
+                <Dialog name={deleteTodolistItemDialog}>
                     <div className="todolist-dialog-textarea">
                         <span>Do you want to delete:</span>
                         <br/> 
                         {this.props.todolistItem.get("text")}
                     </div>
-                    <div className="todolist-dialog-button">
+                    <div className="dialog-confirm">
                         <button onClick={()=>{this.deleteTodolist()}}>Submit</button>
-                        <button onClick={()=>{this.closeModal(deleteTodolistItemDialog)}}>Close</button>
                     </div>
-                </Modal>
+                </Dialog>
             </div>
         )
     }
@@ -127,12 +113,10 @@ class TodolistTable extends Component {
 export default connect(
     state=> {
         const map = state["todolistReducer"];
-        const dialogMap = state["dialogReducer"];
         return {
             todolist:map.get("todolist"),
             isFetching:map.get("isFetching"),
             todolistItem:map.get('todolistItem'),
-            dialogMap:dialogMap,
         };
     },
     {getTodolist,deleteTodolist,updateTodolist,openDialog,closeDialog,selectTodolistItem}

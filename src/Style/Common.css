@@ -17,3 +17,33 @@
     color:#000000;
     border-top: 1px solid rgb(175, 175, 175);
 }
+
+.dialog-delete{
+    position: absolute;
+    top:3px;
+    right:3px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    background-image: url("../images/delete.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.dialog-confirm {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.dialog-confirm>button{
+    height: 40px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+    padding:0;
+}

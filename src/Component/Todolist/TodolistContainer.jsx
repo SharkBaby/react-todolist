@@ -16,7 +16,6 @@ export default class TodolistContainer extends Component {
         //     | __________________ | |_Add_new_|   //
         //                                          //
         //////////////////////////////////////////////
-        console.log('in todolist'+__DEV__)
         return (
             <div>
                 <TodolistTable />
