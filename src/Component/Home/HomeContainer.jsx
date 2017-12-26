@@ -2,33 +2,27 @@ import React, {Component} from 'react'
 import ContentRouter from './ContentRouter'
 import Navigation from './Navigation'
 
-export default class HomeContainer extends Component {
-    constructor(props){
-        super(props);
-    }
+const HomeContainer =()=>{
+    //////////////////////////////////////////////
+    //                                          //
+    //         | Nav1 | Nav2 | <-- <Navation/>  //
+    //__________________________________________//
+    //                                          //
+    //                                          //
+    //             Content  <--<ContentRoutet/> //
+    //                                          //
+    //////////////////////////////////////////////
 
-    render(){
-
-        //////////////////////////////////////////////
-        //                                          //
-        //         | Nav1 | Nav2 | <-- <Navation/>  //
-        //__________________________________________//
-        //                                          //
-        //                                          //
-        //             Content  <--<ContentRoutet/> //
-        //                                          //
-        //////////////////////////////////////////////
-
-
-        return (
-            <div>
-                <header className="home-header">
-                    <Navigation />
-                </header>
-                <main className="home-content">
-                    <ContentRouter />
-                </main>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <header className="home-header">
+                <Navigation />
+            </header>
+            <main className="home-content">
+                <ContentRouter />
+            </main>
+        </div>
+    )
 }
+
+export default HomeContainer;
