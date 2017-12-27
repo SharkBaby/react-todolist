@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import TodolistTable from './TodolistTable'
-import TodolistAdd from './TodolistAdd'
+import TodolistTable from '../../Components/Todolist/TodolistTable';
+import TodolistAdd from '../../Components/Todolist/TodolistAdd';
+import './Todolist.css';
 
 const TodolistContainer=()=>{
     //////////////////////////////////////////////
@@ -22,4 +23,3 @@ const TodolistContainer=()=>{
 }
 
 export default TodolistContainer;
-

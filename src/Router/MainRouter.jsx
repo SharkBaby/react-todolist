@@ -1,15 +1,13 @@
 import React, {Component, PropTypes, createElement} from 'react';
 import {Route, Switch,Redirect,BrowserRouter} from 'react-router-dom'
-import HomeContainer from '../Component/Home/HomeContainer'
-import LoginContainer from '../Component/LoginContainer'
+import Layout from '../Layouts/Layout'
 
 const MainRouter = () =>(
     <BrowserRouter>
         <div>
             <Switch>
-                <Route  path='/home' component={HomeContainer} />
+                <Route  path='/home' component={Layout} />
                 <Redirect from="/" to="/home" />
-                <Route component={LoginContainer} />
             </Switch>
         </div>
     </BrowserRouter>

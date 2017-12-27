@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getTodolist,deleteTodolist,updateTodolist,selectTodolistItem} from '../../Redux/Action/TodoListAction';
 import {openDialog,closeDialog} from '../../Redux/Action/DialogAction';
-import Dialog from '../Common/Dialog'
+import Dialog from '../Dialog/Dialog'
 
 
 const editTodolistItemDialog = 'editTodolistItemDialog';
