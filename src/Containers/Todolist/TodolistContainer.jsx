@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import TodolistTable from '../../Components/Todolist/TodolistTable';
-import TodolistAdd from '../../Components/Todolist/TodolistAdd';
+import TodolistTable from './TodolistTable';
+import TodolistAdd from './TodolistAdd';
 import './Todolist.css';
 
 const TodolistContainer=()=>{
+    
     //////////////////////////////////////////////
     //                                          //
     //      | id | todotext | edit | Delete|    //

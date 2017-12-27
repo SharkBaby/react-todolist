@@ -28,9 +28,9 @@ class TodolistAdd extends Component {
         )
     }
 }
-export default connect(
-    state=> {
 
-    },
-    {addTodolist,getTodolist}
-)(TodolistAdd)
+const mapDispatchToProps = {
+    addTodolist,
+    getTodolist
+};
+export default connect(null,mapDispatchToProps)(TodolistAdd)
