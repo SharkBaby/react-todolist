@@ -6,7 +6,7 @@ const url=`${HOST}/todolist`;
 
 export const selectTodolistItem=(todolistItem)=>{
     return {
-        type: "TODOLISTITEM_DID_SELECT",
+        type: 'TODOLISTITEM_DID_SELECT',
         todolistItem: todolistItem,
     }
 }

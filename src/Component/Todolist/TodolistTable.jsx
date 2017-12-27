@@ -112,10 +112,10 @@ class TodolistTable extends Component {
 }
 export default connect(
     state=> {
-        const map = state["todolistReducer"];
+        const map = state['todolistReducer'];
         return {
-            todolist:map.get("todolist"),
-            isFetching:map.get("isFetching"),
+            todolist:map.get('todolist'),
+            isFetching:map.get('isFetching'),
             todolistItem:map.get('todolistItem'),
         };
     },

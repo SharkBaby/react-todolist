@@ -29,7 +29,7 @@ class Dialog extends Component {
 
 export default connect(
     state=> {
-        const dialogMap = state["dialogReducer"];
+        const dialogMap = state['dialogReducer'];
         return {
             dialogMap:dialogMap,
         };

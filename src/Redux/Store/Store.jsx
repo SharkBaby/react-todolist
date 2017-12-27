@@ -3,13 +3,19 @@ import {todolistReducer} from '../Reducer/TodoListReducer'
 import {dialogReducer} from '../Reducer/DialogReducer'
 import thunk from 'redux-thunk'
 
-var store = createStore(
+const args = [
     combineReducers({
         todolistReducer,
         dialogReducer
-    }), 
-    applyMiddleware(thunk)
-    //compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-);
+    })
+  ];
+
+  if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+    args.push(compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__()));
+  } else {
+    args.push(applyMiddleware(thunk));
+  }
+
+var store = createStore(...args);
 
 export default store;

@@ -11,7 +11,7 @@ class TodolistAdd extends Component {
 
     postNewTodoItem = async ()=>{
         if(!this.newTodoText.value){
-            alert("Please input todo item.");
+            alert('Please input todo item.');
             return;
         }
         await this.props.addTodolist(this.newTodoText.value);

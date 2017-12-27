@@ -33,10 +33,10 @@ const todolistDidSelect = (state,action)=>{
 }
 
 export const todolistReducer = createReducer(defaultState, {
-    "TODOLIST_WILL_GET":todolistWillGet,
-    "TODOLIST_DID_GET":todolistDidGet,
-    "TODOLIST_DID_ADD":todolistDidAdd,
-    "TODOLIST_DID_DELETE": todolistDidDelete,
+    'TODOLIST_WILL_GET':todolistWillGet,
+    'TODOLIST_DID_GET':todolistDidGet,
+    'TODOLIST_DID_ADD':todolistDidAdd,
+    'TODOLIST_DID_DELETE': todolistDidDelete,
     'TODOLIST_DID_UPDATE':todolistDidUpdate,
     'TODOLISTITEM_DID_SELECT':todolistDidSelect,
 })

@@ -24,7 +24,7 @@ module.exports = {
         {
             test: /(\.jsx|\.js)$/,
             use: {
-                loader: "babel-loader",
+                loader: 'babel-loader',
             },
             include: [APP_PATH],
             exclude: /node_modules/
@@ -32,8 +32,8 @@ module.exports = {
         {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: "css-loader"
+                fallback: 'style-loader',
+                use: 'css-loader',
             }),
             include: [APP_PATH],
             exclude: /^node_modules$/,
