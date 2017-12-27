@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import TodolistTable from './TodolistTable';
 import TodolistAdd from './TodolistAdd';
+import * as todolistAction from '../../Redux/Action/TodoListAction';
+import * as dialogAction from '../../Redux/Action/DialogAction';
+import {connect} from 'react-redux';
 import './Todolist.css';
 
-const TodolistContainer=()=>{
-    
+class TodolistContainer extends Component{
     //////////////////////////////////////////////
     //                                          //
     //      | id | todotext | edit | Delete|    //
@@ -15,12 +17,28 @@ const TodolistContainer=()=>{
     //     | __________________ | |_Add_new_|   //
     //                                          //
     //////////////////////////////////////////////
-    return (
-        <div>
-            <TodolistTable />
-            <TodolistAdd />
-        </div>
-    )
+
+    constructor(props){
+        super(props)
+    }
+    
+    render() {
+        return (
+            <div>
+                <TodolistTable {...this.props}/>
+                <TodolistAdd {...this.props}/>
+            </div>
+        )
+    }
 }
 
-export default TodolistContainer;
+const mapStateToProps =  state=> {
+    const map = state['todolistReducer'];
+    return {
+        todolist:map.get('todolist'),
+        isFetching:map.get('isFetching'),
+        todolistItem:map.get('todolistItem'),
+    };
+};
+const mapDispatchToProps = Object.assign(todolistAction,dialogAction);
+export default connect(mapStateToProps, mapDispatchToProps)(TodolistContainer);

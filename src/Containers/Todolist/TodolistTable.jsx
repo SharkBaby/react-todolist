@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {getTodolist,deleteTodolist,updateTodolist,selectTodolistItem} from '../../Redux/Action/TodoListAction';
-import {openDialog,closeDialog} from '../../Redux/Action/DialogAction';
-import Dialog from '../Dialog/Dialog';
+import Dialog from '../../Components/Dialog/Dialog';
 
 const editTodolistItemDialog = 'editTodolistItemDialog';
 const deleteTodolistItemDialog = 'deleteTodolistItemDialog';
 
-class TodolistTable extends Component {
+export default class TodolistTable extends Component {
     constructor(props){
         super(props)
         this.editedItem = null;
@@ -110,21 +107,3 @@ class TodolistTable extends Component {
         )
     }
 }
-
-const mapStateToProps =  state=> {
-    const map = state['todolistReducer'];
-    return {
-        todolist:map.get('todolist'),
-        isFetching:map.get('isFetching'),
-        todolistItem:map.get('todolistItem'),
-    };
-};
-const mapDispatchToProps = {
-    getTodolist,
-    deleteTodolist,
-    updateTodolist,
-    openDialog,
-    closeDialog,
-    selectTodolistItem
-}
-export default connect(mapStateToProps, mapDispatchToProps)(TodolistTable);
