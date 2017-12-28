@@ -36,6 +36,10 @@ export default class TodolistTableItem extends Component {
         await this.props.getTodolist();
         this.props.closeDialog(deleteTodolistItemDialog);
     }
+    openModal = (e)=>{
+        this.props.openDialog(e.target.value);
+        this.props.selectTodolistItem(this.props.todoitem);
+    }
 
     render(){
         return(
@@ -43,16 +47,18 @@ export default class TodolistTableItem extends Component {
                 <td>{this.props.todoitem.text}</td>
                 <td >
                     <button 
+                        value={editTodolistItemDialog}
                         className="editbutton" 
-                        onClick={()=>{this.openModal(editTodolistItemDialog)}}
+                        onClick={this.openModal}
                     >
                         Edit
                     </button>
                 </td>
                 <td>
                     <button 
+                        value={deleteTodolistItemDialog}
                         className="deletebutton" 
-                        onClick={()=>{this.openModal(deleteTodolistItemDialog)}} 
+                        onClick={this.openModal} 
                     />
                 </td>
                 <Dialog name={editTodolistItemDialog}>
@@ -65,7 +71,7 @@ export default class TodolistTableItem extends Component {
                         />
                     </div>
                     <div className="dialog-confirm">
-                        <button onClick={()=>{this.updateTodolist()} }>Submit</button>
+                        <button onClick={this.updateTodolist}>Submit</button>
                     </div>
                 </Dialog>
 
@@ -76,7 +82,7 @@ export default class TodolistTableItem extends Component {
                         {this.props.todolistItem.get("text")}
                     </div>
                     <div className="dialog-confirm">
-                        <button onClick={()=>{this.deleteTodolist()}}>Submit</button>
+                        <button onClick={this.deleteTodolist}>Submit</button>
                     </div>
                 </Dialog>
             </tr>

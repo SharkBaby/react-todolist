@@ -20,7 +20,7 @@ export default class TodolistAdd extends Component {
         return (
             <div className="todolist-add-new">
                 <textarea ref={ref=>this.newTodoText=ref}/>
-                <button  onClick={()=>{this.postNewTodoItem()}} >AddNew</button>
+                <button  onClick={this.postNewTodoItem} >AddNew</button>
             </div>  
         )
     }
