@@ -4,6 +4,7 @@ import TodolistAdd from './TodolistAdd';
 import * as todolistAction from '../../Redux/Action/TodoListAction';
 import * as dialogAction from '../../Redux/Action/DialogAction';
 import {connect} from 'react-redux';
+
 import './Todolist.css';
 
 class TodolistContainer extends Component{
