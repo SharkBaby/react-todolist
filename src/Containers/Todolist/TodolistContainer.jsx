@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 import TodolistTable from './TodolistTable';
 import TodolistAdd from './TodolistAdd';
 import * as todolistAction from '../../Redux/Action/TodoListAction';
@@ -25,10 +25,10 @@ class TodolistContainer extends Component{
     
     render() {
         return (
-            <div>
+            <Fragment>
                 <TodolistTable {...this.props}/>
                 <TodolistAdd {...this.props}/>
-            </div>
+            </Fragment>
         )
     }
 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 import TodolistEditDialog from './Dialog/TodolistEditDialog';
 import TodolistDeleteDialog from './Dialog/TodolistDeleteDialog'
 
@@ -31,7 +31,7 @@ export default class TodolistTable extends Component {
     
     render() {
         return (
-            <div>
+            <Fragment>
                 <table className="common-table">
                     <thead>
                         <tr>
@@ -68,7 +68,7 @@ export default class TodolistTable extends Component {
                 </table>
                 <TodolistEditDialog dialogName={editTodolistItemDialog} {...this.props}/> 
                 <TodolistDeleteDialog dialogName={deleteTodolistItemDialog} {...this.props}/>
-            </div>
+            </Fragment>
         )
     }
 }

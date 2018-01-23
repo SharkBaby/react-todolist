@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import Main from './Main';
 import Header from './Header';
 import './Layout.css'
@@ -14,10 +14,10 @@ const HomeContainer =()=>{
     //                                   //
     ///////////////////////////////////////
     return (
-        <div>
+        <Fragment>
             <Header />
             <Main />
-        </div>
+        </Fragment>
     )
 }
 

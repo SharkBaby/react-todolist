@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component,Fragment} from 'react';
 
 const AboutContainer=()=>{
     return (
-        <div>
+        <Fragment>
             This is About page
-        </div>
+        </Fragment>
     )
 }
 
