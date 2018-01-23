@@ -1,4 +1,4 @@
-import HttpUtil from '../../Util/HttpUtil'
+import httpUtil from '../../Util/HttpUtil'
 import {HOST} from '../../Util/Constants'
 
 
@@ -11,8 +11,6 @@ export const selectTodolistItem=(todolistItem)=>{
     }
 }
 export const getTodolist = ()=> async (dispatch) =>{
-    let httpUtil = new HttpUtil();
-
     dispatch({
         type: 'TODOLIST_WILL_GET'
         });
@@ -26,7 +24,6 @@ export const getTodolist = ()=> async (dispatch) =>{
 }
 
 export const addTodolist = (data) =>  async (dispatch) =>{
-    let httpUtil = new HttpUtil();
     await httpUtil.httpPostAsync(url,data);
 
     dispatch({
@@ -35,7 +32,6 @@ export const addTodolist = (data) =>  async (dispatch) =>{
 }
 
 export const deleteTodolist = (id)=> async (dispatch) =>{
-    let httpUtil = new HttpUtil();
     await httpUtil.httpDeleteAsync(`${url}/${id}`,null);
 
     dispatch({
@@ -44,7 +40,6 @@ export const deleteTodolist = (id)=> async (dispatch) =>{
 }
 
 export const updateTodolist = (id, data) => async (dispatch) =>{
-    let httpUtil = new HttpUtil();
     await httpUtil.httpPutAsync(`${url}/${id}`,data);
     dispatch({
         type: 'TODOLIST_DID_UPDATE',

@@ -1,4 +1,4 @@
-export default class HttpUtil
+class HttpUtil
 {   
     constructor(){
         this.headers = {
@@ -79,3 +79,6 @@ export default class HttpUtil
         return false;
     }
 }
+
+let httpUtil = new HttpUtil();
+export default httpUtil;
